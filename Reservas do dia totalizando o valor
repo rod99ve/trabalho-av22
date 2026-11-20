@@ -1,0 +1,7 @@
+SELECT
+    DATE(a.data_hora_agendamento) AS dia,
+    COUNT(*) AS total_reservas,
+    SUM(a.valor) AS valor_total
+FROM agendamentos a
+WHERE DATE(a.data_hora_agendamento) = CURDATE()
+GROUP BY DATE(a.data_hora_agendamento);
