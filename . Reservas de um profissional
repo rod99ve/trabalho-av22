@@ -1,0 +1,12 @@
+SELECT
+    a.id,
+    c.nome AS cliente,
+    p.nome AS profissional,
+    a.data_hora_agendamento,
+    a.valor,
+    a.status
+FROM agendamentos a
+INNER JOIN clientes c ON a.cliente_id = c.id
+INNER JOIN profissionais p ON a.profissional_id = p.id
+WHERE p.id = 1
+ORDER BY a.data_hora_agendamento;
